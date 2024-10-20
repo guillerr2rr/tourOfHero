@@ -1,0 +1,17 @@
+:host {
+  width: 100%;
+  min-height: 100vh; /* Altura mínima de toda la pantalla */
+  display: grid;
+  grid-template-areas: "sidebar content";
+  grid-template-columns: 120px 1fr; 
+  grid-template-rows: 1fr; 
+}
+
+
+
+.content {
+  grid-area: content;
+  padding: 20px;
+  overflow-y: auto; 
+  height: 100vh;  
+}

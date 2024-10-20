@@ -1,0 +1,17 @@
+<div class="container">
+   
+<h2 class="title"><i class="pi pi-crown" style="font-size: 24px; "></i> Top Heroes</h2>
+<div class="heroes-menu">
+  <a class="menu" *ngFor="let hero of heroes" routerLink="/detail/{{ hero.id }}">
+    {{ hero.name }}
+  </a>
+</div>
+
+<app-hero-search class="search"></app-hero-search>
+</div>
+<!--<p-dropdown
+  [options]="heroes"
+  [(ngModel)]="selectedHero"
+  optionLabel="name"
+  placeholder="Select a Hero"
+/>-->
