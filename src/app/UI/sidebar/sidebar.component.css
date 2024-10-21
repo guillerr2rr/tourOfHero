@@ -17,10 +17,10 @@
   grid-area: 2 / 1 / 3 / 2;
 }
 .link1 {
-  grid-area: 4 / 1 / 5 / 2;
+  grid-area: 4 / 1 / 5 / 2;font-weight: bold;
 }
 .link2 {
-  grid-area: 6 / 1 / 7 / 2;
+  grid-area: 6 / 1 / 7 / 2;font-weight: bold;
 }
 
 /* Estilos de los botones */

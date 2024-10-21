@@ -4,8 +4,7 @@
   grid-template-rows: repeat(10, 1fr);
   grid-column-gap: 0px;
   grid-row-gap: 0px;
-  text-align: center; 
-  
+  text-align: center;  
 }
 
 .nombre {
@@ -35,7 +34,7 @@
     width: 100%;
     max-width: 250px;
     min-height: 50px;
-    color: #fff;
+ 
      
     outline: none;
     transition: border-color 0.3s ease; margin-left: 20px;

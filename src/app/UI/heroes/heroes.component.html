@@ -1,7 +1,7 @@
 <div class="container">
   <h2 class="title">My Heroes</h2>
   <div class="add">
-    <label for="new-hero" class="nameHero">Hero name: </label>
+    <label for="new-hero" class="nameHero font-bold">Hero name: </label>
     <input id="new-hero" #heroName />
   
     <button class="addb" (click)="add(heroName.value); heroName.value = ''">
@@ -9,18 +9,17 @@
     </button>
   </div>
   
-
   <p-dataView #dv [value]="heroModel.heroes" class="list">
     <ng-template pTemplate="list" let-heroes>
       <div class="grid grid-nogutter">
         <div
           class="col-12"
-          *ngFor="let hero of heroes; let first = first"
-          class="col-12"
+          *ngFor="let hero of heroes; let last = last"
         >
           <div
             class="flex flex-column sm:flex-row sm:align-items-center p-4 gap-3"
-            [ngClass]="{ 'border-top-1 surface-border': !first }"
+            [ngClass]="{ 'border-top-1 surface-border': true }"
+            [style.marginBottom]="last ? '16px' : '0'"
           >
             <div
               class="flex flex-column md:flex-row justify-content-between md:align-items-center flex-1 gap-4"
@@ -31,11 +30,11 @@
                 <div>
                   <a
                     routerLink="/detail/{{ hero.id }}"
-                    class="name font-medium text-secondary text-lg"
+                    class="name font-bold text-secondary text-lg"
                   >
                     {{ hero.name }}
                   </a>
-                  <div class="id text-sm font-medium text-900 mt-2">
+                  <div class="id text-sm font-medium text-900 mt-2 ">
                     {{ hero.id }}
                   </div>
                 </div>
@@ -44,11 +43,11 @@
                 <div class="flex flex-row-reverse md:flex-row gap-2">
                   <button
                     type="button"
-                    class="delete p-button p-component"
+                    class="delete p-button p-component "
                     title="Eliminar héroe"
                     (click)="delete(hero)"
                   >
-                    <i class="pi pi-trash" style="font-size: 24px"></i>
+                    <i class="pi pi-trash font-bold" style="font-size: 24px"></i>
                   </button>
                 </div>
               </div>
@@ -59,23 +58,3 @@
     </ng-template>
   </p-dataView>
 </div>
-
-<!--<h2>My Heroes</h2> <div>
-  <label for="new-hero">Hero name: </label>
-  <input id="new-hero" #heroName />
- 
-  <button type="button" class="add-button" (click)="add(heroName.value); heroName.value=''">
-    Add hero
-  </button>
-</div>
-
-<ul class="heroes">
-  <li *ngFor="let hero of heroModel.heroes">
-    <a routerLink="/detail/{{hero.id}}">
-      <span class="badge">{{hero.id}}</span> {{hero.name}}
-    </a>
-    <button type="button" class="delete" title="delete hero"
-      (click)="delete(hero)">x</button>
-  </li>
-</ul>
-  -->
