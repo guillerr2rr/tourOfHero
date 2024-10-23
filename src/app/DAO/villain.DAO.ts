@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
 
 @Injectable({ providedIn: 'root' })
 export class villainDAO {
-  private villainesUrl = 'api/villains';
+  private villainsUrl = 'api/villains';
 
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
@@ -14,42 +14,42 @@ export class villainDAO {
 
   /////////// CREATE methods ///////////
 
-  addVillain(Villain: Villain): Observable<Villain> {
-    return this.http.post<Villain>(this.villainesUrl, Villain, this.httpOptions);
+  addVillain(villain: Villain): Observable<Villain> {
+    return this.http.post<Villain>(this.villainsUrl, villain, this.httpOptions);
   }
 
   /////////// READ methods ///////////
 
-  getVillaines(): Observable<Villain[]> {
-    return this.http.get<Villain[]>(this.villainesUrl);
+  getVillains(): Observable<Villain[]> {
+    return this.http.get<Villain[]>(this.villainsUrl);
   }
 
   getVillainNo404<Data>(id: number): Observable<Villain> {
-    const url = `${this.villainesUrl}/?id=${id}`;
+    const url = `${this.villainsUrl}/?id=${id}`;
     return this.http.get<Villain>(url);
   }
 
   getVillain(id: number): Observable<Villain> {
-    const url = `${this.villainesUrl}/${id}`;
+    const url = `${this.villainsUrl}/${id}`;
     return this.http.get<Villain>(url);
   }
 
-  searchVillaines(term: string): Observable<Villain[]> {
+  searchVillains(term: string): Observable<Villain[]> {
     if (!term.trim()) {
       return of([]);
     }
-    return this.http.get<Villain[]>(`${this.villainesUrl}/?name=${term}`);
+    return this.http.get<Villain[]>(`${this.villainsUrl}/?name=${term}`);
   }
 
   /////////// UPDATE methods ///////////
 
-  updateVillain(Villain: Villain): Observable<any> {
-    return this.http.put(this.villainesUrl, Villain, this.httpOptions);
+  updateVillain(villain: Villain): Observable<any> {
+    return this.http.put(this.villainsUrl, villain, this.httpOptions);
   }
   /////////// DELETE methods ///////////
 
   deleteVillain(id: number): Observable<Villain> {
-    const url = `${this.villainesUrl}/${id}`;
+    const url = `${this.villainsUrl}/${id}`;
 
     return this.http.delete<Villain>(url, this.httpOptions);
   }

@@ -1,14 +1,14 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { villainDAO } from '../../DAO/villain.DAO';
-import { VillainModel } from '../../Model/Views/Dynamic/VillainModel';
-import { VillainService } from '../../Service/villain.service';
-import { Villain } from '../../Model/Domain/villano';
-import { InMemoryDataService } from '../../Service/in-memory-data.service';
-import { PowerModel } from '../../Model/Views/Dynamic/powerModel';
+import { villainDAO } from '../../../DAO/villain.DAO';
+import { VillainModel } from '../../../Model/Views/Dynamic/VillainModel';
+import { VillainService } from '../../../Service/villain.service';
+import { Villain } from '../../../Model/Domain/villano';
+import { InMemoryDataService } from '../../../Service/in-memory-data.service';
+import { PowerModel } from '../../../Model/Views/Dynamic/powerModel';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import { Router } from '@angular/router';
-import { FechoriaModel } from '../../Model/Views/Dynamic/fechoriaModel';
+import { FechoriaModel } from '../../../Model/Views/Dynamic/fechoriaModel';
 
 @Component({
   selector: 'app-formulario',
@@ -50,17 +50,17 @@ export class FormularioComponentVillain implements OnInit {
       return;
     }
 
-    this.VillainDao.getVillaines().subscribe((villains) => {
+    this.VillainDao.getVillains().subscribe((villains) => {
       const lastVillain = villains[villains.length - 1];
       const newId = lastVillain ? lastVillain.id + 1 : 1;
       const newVillain: Villain = {
         id: newId,
         name,
-        lastName,
-        alterEgo,
         age,
         power,
         fechoria,
+        alterEgo,
+        lastName,
       };
 
       this.villainService.addVillain(newVillain);

@@ -1,10 +1,10 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { heroDAO } from '../../DAO/hero.DAO';
-import { HeroModel } from '../../Model/Views/Dynamic/HeroModel';
-import { HeroService } from '../../Service/hero.service';
-import { Hero } from '../../Model/Domain/hero';
-import { InMemoryDataService } from '../../Service/in-memory-data.service';
-import { PowerModel } from '../../Model/Views/Dynamic/powerModel';
+import { heroDAO } from '../../../DAO/hero.DAO';
+import { HeroModel } from '../../../Model/Views/Dynamic/HeroModel';
+import { HeroService } from '../../../Service/hero.service';
+import { Hero } from '../../../Model/Domain/hero';
+import { InMemoryDataService } from '../../../Service/in-memory-data.service';
+import { PowerModel } from '../../../Model/Views/Dynamic/powerModel';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import { Router } from '@angular/router';

@@ -1,21 +1,26 @@
 ::ng-deep table {
   height: 50vh;
+  border-collapse: collapse;
+  max-width: 100vh;  
+  overflow-x: auto;
+}
+
+::ng-deep th,
+::ng-deep td,
+.table-data,
+.table-header {
+  min-width: 275px;
+  height: 99px; 
 }
 
 .data-container {
-  border-radius: 5px;
-
   display: flex;
   flex-direction: column;
-
-  align-items: center;
+  align-items: justify;
 }
 
 .p-element {
   font-weight: bold;
-
-  width: 100%;
-  border-collapse: collapse;
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -26,13 +31,9 @@
 th,
 td {
   font-weight: bold;
-  border: 1px solid #ddd;
-  text-align: center;
-}
-
-th,
-td {
-  font-weight: bold;
+  border-bottom: 1px solid;
+  text-align: left;
+  vertical-align: middle;
   padding: 8px;
 }
 
@@ -47,15 +48,16 @@ tr {
   font-weight: bold;
   flex: 1;
 }
+
 .container {
   display: flex;
   flex-direction: column;
 }
+
 .title {
   text-align: center;
   font-size: 2em;
   margin-bottom: 70px;
-
   padding-bottom: 10px;
   font-weight: bold;
 }
@@ -64,7 +66,8 @@ tr {
   font-weight: bold;
   font-size: 1.5em;
 }
+
 .context {
-  margin: 0%;
-  padding: 0%;
-} 
+  margin: 0;
+  padding: 0;
+}

@@ -28,17 +28,10 @@
             class="table-data"
             (contextmenu)="onContextMenu($event, item)"
           >
-            {{ item[header.field] ?? "Unknown" }}
+            {{ item[header.field] ?? "&nbsp;" }}
           </td>
         </tr>
       </ng-template>
-
-      <!-- <ng-template pTemplate="footer">
-        <tr *ngIf="params.length % contador !== 0">
-          <td *ngFor="let header of headers" class="table-data">&nbsp;</td>
-        </tr>
-      </ng-template> -->
-
     </p-table>
 
     <p-contextMenu

@@ -7,6 +7,12 @@ export class PowerModel {
     'Super Flexible',
     'Super Hot',
     'Weather Changer',
+    'Invisibility',
+    'Flight',
+    'Super Strength',
+    'Telepathy',
+    'Time Manipulation',
+    'Mind Control',
   ];
   power: string | undefined;
 }

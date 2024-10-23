@@ -1,0 +1,74 @@
+<div *ngIf="villainModel.villain" class="contenVillainDetail">
+  <h2 class="nombre">{{ villainModel.villain.name | uppercase }} Details</h2>
+
+  <div class="id"><span>id: </span>{{ villainModel.villain.id }}</div>
+
+  <div class="modNombre">
+    <label for="villain-name">Villain name: </label>
+    <input
+      id="villain-name"
+      [(ngModel)]="villainModel.villain.name"
+      placeholder="Villain name"
+    />
+  </div>
+
+  <div class="modAlterEgo">
+    <label for="alterEgo">Villain alter ego: </label>
+    <input
+      id="alterEgo"
+      [(ngModel)]="villainModel.villain.alterEgo"
+      placeholder="Alter Ego"
+    />
+  </div>
+
+  <div class="modLastName">
+    <label for="lastName">Villain last name: </label>
+    <input
+      id="lastName"
+      [(ngModel)]="villainModel.villain.lastName"
+      placeholder="Last Name"
+    />
+  </div>
+
+  <div class="modAge">
+    <label for="age">Villain age: </label>
+    <input id="age" [(ngModel)]="villainModel.villain.age" placeholder="Age" />
+  </div>
+
+  <div class="form-group">
+    <label for="power">Villain Power</label>
+    <select
+      class="form-control"
+      id="power"
+      required
+      [(ngModel)]="villainModel.villain.power"
+      name="power"
+      #power="ngModel"
+    >
+      <option *ngFor="let pow of powerModel.powers" [value]="pow">
+        {{ pow }}
+      </option>
+    </select>
+  </div><div class="form-group-fechorias">
+    <label for="fechoria">Villain Fechorias</label>
+    <select
+      class="form-control"
+      id="fechorias"
+      [(ngModel)]="villainModel.villain.fechoria"
+      name="fechoria"
+      #fechoria="ngModel"
+    >
+      <option
+        *ngFor="let fechoria of fechoriaModel.fechorias"
+        [value]="fechoria"
+      >
+        {{ fechoria }}
+      </option>
+    </select>
+  </div>
+  
+  <div class="botones">
+    <button class="boton" type="button" (click)="goBack()">Go Back</button>
+    <button class="boton" type="button" (click)="save()">Save</button>
+  </div>
+</div>

@@ -1,0 +1,62 @@
+.contenVillainDetail {
+  max-width: 500px;
+  margin: 50px auto;
+  margin-top: 100px;
+  padding: 20px;
+
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.nombre {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.id,
+.modNombre,
+.modAlterEgo,
+.modLastName,
+.modAge,
+.form-group-power,
+.botones {
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  display: block;
+}
+input,
+select {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid;
+  border-radius: 5px;
+  box-sizing: border-box;  font-weight: bold;
+}
+
+input,
+select:focus {
+  outline: none;
+  font-weight: bold;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.botones {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.boton {
+  padding: 10px 20px;
+  border: 1px solid;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-left: 10px;
+}
+.boton:hover {
+  filter: brightness(0.8);
+}

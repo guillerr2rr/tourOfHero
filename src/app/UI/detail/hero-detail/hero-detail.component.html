@@ -37,17 +37,22 @@
 
   <div class="form-group">
     <label for="power">Hero Power</label>
-    <select class="form-control" id="power"
-            required
-            [(ngModel)]="heroModel.hero.power" name="power"
-            #power="ngModel">
-      <option *ngFor="let pow of powerModel.powers" [value]="pow">{{pow}}</option>
+    <select
+      class="form-control"
+      id="power"
+      required
+      [(ngModel)]="heroModel.hero.power"
+      name="power"
+      #power="ngModel"
+    >
+      <option *ngFor="let pow of powerModel.powers" [value]="pow">
+        {{ pow }}
+      </option>
     </select>
- 
+  </div>
 
-    <div class="botones">
-      <button class="boton" type="button" (click)="goBack()">Go Back</button>
-      <button class="boton" type="button" (click)="save()">Save</button>
-    </div>
+  <div class="botones">
+    <button class="boton" type="button" (click)="goBack()">Go Back</button>
+    <button class="boton" type="button" (click)="save()">Save</button>
   </div>
 </div>

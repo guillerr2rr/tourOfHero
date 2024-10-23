@@ -30,8 +30,8 @@ export class VillainService {
   /////////// READ methods ///////////
 
   /** GET villains from the server */
-  getVillaines(): void {
-    this.villainDAO.getVillaines().subscribe({
+  getVillains(): void {
+    this.villainDAO.getVillains().subscribe({
       next: (villains: Villain[]) => {
         this.villainModel.villains = villains;
       },
@@ -42,8 +42,8 @@ export class VillainService {
   }
   private villains: Villain[] = [];
 
-  getVillainesArray(): Villain[] {
-    this.villainDAO.getVillaines().subscribe({
+  getVillainsArray(): Villain[] {
+    this.villainDAO.getVillains().subscribe({
       next: (villains: Villain[]) => {
         this.villainModel.villains = villains;
       },
@@ -55,8 +55,8 @@ export class VillainService {
     return this.villains;
   }
 
-  getVillainesSubscription(): Observable<Villain[]> {
-    return this.villainDAO.getVillaines();
+  getVillainsSubscription(): Observable<Villain[]> {
+    return this.villainDAO.getVillains();
   }
 
   /** GET villain by id. Return `undefined` when id not found */
@@ -84,11 +84,11 @@ export class VillainService {
   }
 
   /** Search villains by name */
-  searchVillaines(term: string): Observable<Villain[]> {
+  searchVillains(term: string): Observable<Villain[]> {
     if (!term.trim()) {
       return of([]);
     }
-    return this.villainDAO.searchVillaines(term);
+    return this.villainDAO.searchVillains(term);
   }
 
   /////////// UPDATE methods ///////////

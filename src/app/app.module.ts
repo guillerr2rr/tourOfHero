@@ -10,17 +10,17 @@ import { InMemoryDataService } from './Service/in-memory-data.service';
 
 // UI Components
 import { HeroesComponent } from './UI/listas/heroe/heroes.component';
-import { HeroDetailComponent } from './UI/hero-detail/hero-detail.component';
+import { HeroDetailComponent } from './UI/detail/hero-detail/hero-detail.component';
 import { MessagesComponent } from './UI/messages/messages.component';
 import { DashboardComponent } from './UI/dashboard/dashboard.component';
 import { HeroSearchComponent } from './UI/hero-search/hero-search.component';
 import { InputSwitchComponent } from './UI/input-switch/input-switch.component';
 import { SidebarComponent } from './UI/sidebar/sidebar.component';
-import { FormularioComponentHeroe } from './UI/formularioHeroes/formulario.component';
-import { FormularioComponentVillain } from './UI/formularioVillains/formulario.component';
+import { FormularioComponentHeroe } from './UI/formularios/formularioHeroes/formulario.component';
+import { FormularioComponentVillain } from './UI/formularios/formularioVillains/formulario.component';
 import { EsquemaListaComponent } from './UI/listas/esquema-lista/esquema-lista.component';
 import { VillainsComponent } from './UI/listas/villains/villains.component';
-
+import { VillainDetailComponent } from './UI/detail/villain-detail/villain-detail.component';
 // PrimeNG Modules
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DropdownModule } from 'primeng/dropdown';
@@ -36,9 +36,11 @@ import { ToolbarModule } from 'primeng/toolbar';
 import { ToastModule } from 'primeng/toast';
 import { SplitButtonModule } from 'primeng/splitbutton';
 import { ContextMenuModule } from 'primeng/contextmenu';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 @NgModule({
   declarations: [
+    VillainDetailComponent,
     FormularioComponentHeroe,
     FormularioComponentVillain,
     AppComponent,
@@ -80,7 +82,7 @@ import { ContextMenuModule } from 'primeng/contextmenu';
       dataEncapsulation: false,
     }),
   ],
-  providers: [],
+  providers: [provideAnimationsAsync()],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

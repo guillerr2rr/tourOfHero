@@ -2,9 +2,9 @@ import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 
-import { HeroService } from '../../Service/hero.service';
-import { HeroModel } from '../../Model/Views/Dynamic/HeroModel';
-import { PowerModel } from '../../Model/Views/Dynamic/powerModel';
+import { HeroService } from '../../../Service/hero.service';
+import { HeroModel } from '../../../Model/Views/Dynamic/HeroModel';
+import { PowerModel } from '../../../Model/Views/Dynamic/powerModel';
 @Component({
   selector: 'app-hero-detail',
   templateUrl: './hero-detail.component.html',
@@ -21,13 +21,13 @@ export class HeroDetailComponent implements OnInit,OnChanges {
   ) {}
   ngOnChanges(changes: SimpleChanges): void {
     const id = Number(this.route.snapshot.paramMap.get('id'));
-    this.heroService.getHero(id);
+   
     this.selectedPower = this.heroModel.hero?.power;
   }
 
   ngOnInit(): void {
     const id = Number(this.route.snapshot.paramMap.get('id'));
-    this.heroService.getHero(id);
+ 
     this.selectedPower = this.heroModel.hero?.power;
   }
 

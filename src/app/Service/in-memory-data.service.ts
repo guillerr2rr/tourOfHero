@@ -2,43 +2,49 @@ import { Injectable } from '@angular/core';
 import { InMemoryDbService } from 'angular-in-memory-web-api';
 import { Hero } from '../Model/Domain/hero';
 import { Villain } from '../Model/Domain/villano';
+import { PowerModel } from '../Model/Views/Dynamic/powerModel';
+import { FechoriaModel } from '../Model/Views/Dynamic/fechoriaModel';
 @Injectable({
   providedIn: 'root',
 })
 export class InMemoryDataService implements InMemoryDbService {
-  createPowers() {
-    return [
-      'Really Smart',
-      'Super Flexible',
-      'Super Hot',
-      'Weather Changer',
-      'Invisibility',
-      'Flight',
-      'Super Strength',
-      'Telepathy',
-      'Time Manipulation',
-      'Mind Control',
-    ];
-  }
+  constructor(
+    public powerModel: PowerModel,
+    public fechoriaModel: FechoriaModel
+  ) {}
+  // createPowers() {
+  //   return [
+  //     'Really Smart',
+  //     'Super Flexible',
+  //     'Super Hot',
+  //     'Weather Changer',
+  //     'Invisibility',
+  //     'Flight',
+  //     'Super Strength',
+  //     'Telepathy',
+  //     'Time Manipulation',
+  //     'Mind Control',
+  //   ];
+  // }
 
-  createFechorias() {
-    return [
-      'Robó el banco nacional',
-      'Secuestró al alcalde',
-      'Destruyó el monumento histórico',
-      'Hackeó los sistemas del gobierno',
-      'Causó un apagón masivo',
-      'Envenenó el suministro de agua',
-      'Incendió la biblioteca pública',
-      'Rompió la barrera del tiempo',
-      'Controla la mente del presidente',
-      'Desató una tormenta eterna',
-    ];
-  }
+  // createFechorias() {
+  //   return [
+  //     'Robó el banco nacional',
+  //     'Secuestró al alcalde',
+  //     'Destruyó el monumento histórico',
+  //     'Hackeó los sistemas del gobierno',
+  //     'Causó un apagón masivo',
+  //     'Envenenó el suministro de agua',
+  //     'Incendió la biblioteca pública',
+  //     'Rompió la barrera del tiempo',
+  //     'Controla la mente del presidente',
+  //     'Desató una tormenta eterna',
+  //   ];
+  // }
 
   createDb() {
-    const powers = this.createPowers();
-    const fechorias = this.createFechorias();
+    const powers = this.powerModel.powers;
+    const fechorias = this.fechoriaModel.fechorias;
 
     const heroes: Hero[] = [
       {

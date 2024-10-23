@@ -6,8 +6,9 @@ import {
   AfterViewInit,
   Output,
   EventEmitter,
+  OnChanges,
+  SimpleChanges,
 } from '@angular/core';
-import { PersonaConPoderes } from '../../../Model/Domain/personaConPoderes';
 import { MenuItem } from 'primeng/api';
 import { ContextMenu } from 'primeng/contextmenu';
 import { Router } from '@angular/router';
@@ -17,27 +18,32 @@ import { Router } from '@angular/router';
   templateUrl: './esquema-lista.component.html',
   styleUrls: ['./esquema-lista.component.css'],
 })
-export class EsquemaListaComponent implements OnInit, AfterViewInit {
-  @Input() params: PersonaConPoderes[] = [];
+export class EsquemaListaComponent implements OnInit,  OnChanges {
+  //@Input() params: PersonaConPoderes[] = [];
+
+  @Input() params: any[] = [];
   @Input() title: string = '';
-  selectedItem!: PersonaConPoderes;
+  selectedItem!: any;
   @ViewChild('menu') menu!: ContextMenu;
-  @Output() delete = new EventEmitter<PersonaConPoderes>();
-  @Output() edit = new EventEmitter<PersonaConPoderes>();
-  contador: number = 0;
+  @Output() delete = new EventEmitter<any>();
+  @Output() edit = new EventEmitter<any>();
   items: MenuItem[] = [];
   headers: any[] = [];
- 
+  emptyRows: number = 0;
+
   constructor(private router: Router) {}
+  ngOnChanges(): void {
+    this.rellenador();
+  }
 
   ngOnInit() {
     this.initializeHeaders();
     this.initializeMenuItems();
+  
+    this.rellenador();
   }
 
-  ngAfterViewInit() {
-    console.log(this.menu);
-  }
+ 
 
   initializeHeaders() {
     if (this.params.length) {
@@ -62,6 +68,7 @@ export class EsquemaListaComponent implements OnInit, AfterViewInit {
         icon: 'pi pi-trash',
         command: () => {
           this.delete.emit(this.selectedItem);
+          console.log(this.selectedItem);
         },
       },
       {
@@ -74,10 +81,15 @@ export class EsquemaListaComponent implements OnInit, AfterViewInit {
     ];
   }
 
-  onContextMenu(event: MouseEvent, item: PersonaConPoderes) {
+  onContextMenu(event: MouseEvent, item: any) {
     event.preventDefault();
     this.selectedItem = item;
     this.menu.show(event);
   }
  
+  rellenador() {
+    while (this.params.length % 5 != 0  ) {
+      this.params.push([]);
+    }
+  }
 }
