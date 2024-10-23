@@ -1,22 +1,27 @@
 ::ng-deep table {
-  height: 50vh;
+  height: 50vh; /* Mantiene la altura máxima de la tabla */
   border-collapse: collapse;
-  max-width: 100vh;  
-  overflow-x: auto;
+  width: 100%; /* Ajusta el ancho de la tabla al 100% del contenedor */
+  max-width: 100%; /* Limita el ancho máximo de la tabla */
+  overflow-x: hidden; /* Evita el desbordamiento horizontal */
 }
 
 ::ng-deep th,
 ::ng-deep td,
 .table-data,
 .table-header {
-  min-width: 275px;
-  height: 99px; 
+  min-width: 150px; /* Reduce el mínimo ancho de las columnas para evitar desbordamientos */
+  height: 99px; /* Mantiene la altura de las celdas */
+  white-space: normal; /* Permite que el contenido se ajuste en varias líneas si es necesario */
+  word-wrap: break-word; /* Asegura que el texto largo se ajuste en la celda */
 }
 
 .data-container {
   display: flex;
   flex-direction: column;
-  align-items: justify;
+  align-items: center; /* Centra los elementos dentro del contenedor */
+  width: 100%; /* Asegura que el contenedor ocupe todo el ancho disponible */
+  overflow-x: hidden; /* Evita barras de desplazamiento en el contenedor */
 }
 
 .p-element {
@@ -25,17 +30,9 @@
   display: flex;
   flex-direction: column;
   align-items: stretch;
+  width: 100%; /* Asegura que este elemento también ocupe todo el ancho disponible */
 }
 
-.table,
-th,
-td {
-  font-weight: bold;
-  border-bottom: 1px solid;
-  text-align: left;
-  vertical-align: middle;
-  padding: 8px;
-}
 
 tbody {
   font-weight: bold;
@@ -52,14 +49,17 @@ tr {
 .container {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  width: 100%; /* Asegura que el contenedor ocupe todo el ancho de la página */
 }
 
-.title {
+.title {margin-top: 0;
   text-align: center;
   font-size: 2em;
   margin-bottom: 70px;
   padding-bottom: 10px;
   font-weight: bold;
+  width: 100%;  
 }
 
 .pi-plus-circle {
@@ -70,4 +70,13 @@ tr {
 .context {
   margin: 0;
   padding: 0;
+}
+.table,
+th,
+td {
+  font-weight: bold;
+  border-bottom: 1px solid;
+  text-align: left!important;
+  vertical-align: middle!important;
+  padding: 8px;
 }
