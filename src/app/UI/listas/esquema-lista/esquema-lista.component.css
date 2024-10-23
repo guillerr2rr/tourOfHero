@@ -1,0 +1,70 @@
+::ng-deep table {
+  height: 50vh;
+}
+
+.data-container {
+  border-radius: 5px;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+}
+
+.p-element {
+  font-weight: bold;
+
+  width: 100%;
+  border-collapse: collapse;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.table,
+th,
+td {
+  font-weight: bold;
+  border: 1px solid #ddd;
+  text-align: center;
+}
+
+th,
+td {
+  font-weight: bold;
+  padding: 8px;
+}
+
+tbody {
+  font-weight: bold;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+tr {
+  font-weight: bold;
+  flex: 1;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+}
+.title {
+  text-align: center;
+  font-size: 2em;
+  margin-bottom: 70px;
+
+  padding-bottom: 10px;
+  font-weight: bold;
+}
+
+.pi-plus-circle {
+  font-weight: bold;
+  font-size: 1.5em;
+}
+.context {
+  margin: 0%;
+  padding: 0%;
+} 

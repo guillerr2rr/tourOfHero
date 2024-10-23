@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="containerForm">
+      <h1 class="title">Villains Form</h1>
+
+      <div class="form-group-name">
+        <label for="villainName">Villain name: </label>
+        <input
+          type="text"
+          class="form-control"
+          id="villainName"
+          name="villainName"
+          required
+          #villainName
+        />
+        <!-- Mensaje de error opcional -->
+        <!-- <div *ngIf="!villainName?.value" class="text-danger">
+          Villain name is required
+        </div> -->
+      </div>
+
+      <div class="form-group-alterEgo">
+        <label for="alterEgo">Alter ego: </label>
+        <input
+          type="text"
+          class="form-control"
+          id="alterEgo"
+          name="alterEgo"
+          #alterEgo
+        />
+      </div>
+      
+      <div class="form-group-lastName">
+        <label for="lastName">Last name: </label>
+        <input
+          type="text"
+          class="form-control"
+          id="lastName"
+          name="lastName"
+          #lastName
+        />
+      </div>
+
+      <div class="form-group-age">
+        <label for="age">Age: </label>
+        <input
+          type="number"
+          class="form-control"
+          id="age"
+          name="age"
+          required
+          #age
+        />
+      </div>
+
+      <div class="form-group-power">
+        <label for="power">Villain Power</label>
+        <select class="form-control" id="power" required name="power" #power>
+          <option *ngFor="let pow of powerModel.powers" [value]="pow">
+            {{ pow }}
+          </option>
+        </select>
+      </div>
+
+      <div class="form-group-fechorias">
+        <label for="fechoria">Villain Fechorias</label>
+        <select
+          class="form-control"
+          id="fechorias"
+          required
+          name="fechorias"
+          #fechoria
+        >
+          <option
+            *ngFor="let fechoria of fechoriaModel.fechorias"
+            [value]="fechoria"
+          >
+            {{ fechoria }}
+          </option>
+        </select>
+      </div>
+
+      <div class="buttons">
+        <button
+          type="button"
+          class="btn"
+          (click)="
+            add(
+              villainName.value,
+              age.valueAsNumber,
+              power.value,
+              fechoria.value,
+              alterEgo.value,
+              lastName.value
+            )
+          "
+        >
+          Submit
+        </button>
+        <button class="boton" type="button" (click)="goBack()">go back</button>
+      </div>
+    </div>
+  </body>
+</html>

@@ -21,6 +21,7 @@ export class heroDAO {
   /////////// READ methods ///////////
 
   getHeroes(): Observable<Hero[]> {
+    
     return this.http.get<Hero[]>(this.heroesUrl);
   }
 

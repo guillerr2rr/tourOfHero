@@ -1,10 +1,53 @@
-<div *ngIf="this.heroModel.hero" class="contenHeroDetail">
-  <h2 class="nombre ">{{   this.heroModel.hero.name | uppercase }} Details</h2>
-  <div class="id "><span>id: </span>{{   this.heroModel.hero.id }}</div>
+<div *ngIf="heroModel.hero" class="contenHeroDetail">
+  <h2 class="nombre">{{ heroModel.hero.name | uppercase }} Details</h2>
+
+  <div class="id"><span>id: </span>{{ heroModel.hero.id }}</div>
+
   <div class="modNombre">
     <label for="hero-name">Hero name: </label>
-    <input id="hero-name" [(ngModel)]=" heroModel.hero.name" placeholder="Hero name" />
-  </div><div class="botones">
-  <button class="boton " type="button" (click)="goBack()"> go back</button
-  ><button class="boton" type="button" (click)="save()">save</button></div>
+    <input
+      id="hero-name"
+      [(ngModel)]="heroModel.hero.name"
+      placeholder="Hero name"
+    />
+  </div>
+
+  <div class="modAlterEgo">
+    <label for="alterEgo">Hero alter ego: </label>
+    <input
+      id="alterEgo"
+      [(ngModel)]="heroModel.hero.alterEgo"
+      placeholder="Alter Ego"
+    />
+  </div>
+
+  <div class="modLastName">
+    <label for="lastName">Hero last name: </label>
+    <input
+      id="lastName"
+      [(ngModel)]="heroModel.hero.lastName"
+      placeholder="Last Name"
+    />
+  </div>
+
+  <div class="modAge">
+    <label for="age">Hero age: </label>
+    <input id="age" [(ngModel)]="heroModel.hero.age" placeholder="Age" />
+  </div>
+
+  <div class="form-group">
+    <label for="power">Hero Power</label>
+    <select class="form-control" id="power"
+            required
+            [(ngModel)]="heroModel.hero.power" name="power"
+            #power="ngModel">
+      <option *ngFor="let pow of powerModel.powers" [value]="pow">{{pow}}</option>
+    </select>
+ 
+
+    <div class="botones">
+      <button class="boton" type="button" (click)="goBack()">Go Back</button>
+      <button class="boton" type="button" (click)="save()">Save</button>
+    </div>
+  </div>
 </div>

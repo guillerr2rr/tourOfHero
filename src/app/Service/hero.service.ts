@@ -16,7 +16,7 @@ export class HeroService {
 
     this.heroDAO.addHero(hero).subscribe({
       next: (hero: Hero) => {
-        console.log(hero.id);
+ 
         this.heroModel.hero = hero;
       },
       error: (error) => {
@@ -37,6 +37,21 @@ export class HeroService {
         console.error(error);
       },
     });
+  }
+  private heroes: Hero[] = [];
+
+  getHeroesArray(): Hero[] {
+    this.heroDAO.getHeroes().subscribe({
+      next: (heroes: Hero[]) => {
+        this.heroModel.heroes = heroes;
+      
+      },
+      error: (error) => {
+        console.error(error);
+      },
+    });
+ 
+    return this.heroes;
   }
 
   getHeroesSubscription(): Observable<Hero[]> {

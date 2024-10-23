@@ -1,0 +1,87 @@
+
+body{display: flex;
+  justify-content: center;  
+  align-items: center;    
+  height: 90vh;       
+}
+
+.containerForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  
+  min-width: 500px;
+
+ 
+
+  padding: 20px;
+
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+  /* font-family: "Arial", sans-serif; */
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.form-group-name,
+.form-group-alterEgo,
+.form-group-lastName,
+.form-group-age,
+.form-group-power {
+  margin-bottom: 15px;  font-weight: bold;
+}
+
+label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  display: block;  font-weight: bold;
+}
+
+input[type="text"],
+input[type="number"],
+select {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid;
+  border-radius: 5px;
+  box-sizing: border-box;  font-weight: bold;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+select:focus {
+  outline: none;  font-weight: bold;
+
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.buttons {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.btn {
+  padding: 10px 20px;
+  border: 1px solid;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.boton {
+  padding: 10px 20px;
+  border: 1px solid;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-left: 10px;
+}
+
+.boton:hover {
+  filter: brightness(0.8);
+}

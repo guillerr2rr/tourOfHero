@@ -7,13 +7,14 @@ body {
   color: #e5e5e5;
 }
 
-a {
+a,
+table {
   background-color: #2e3440;
 }
 .sideBar {
   background-color: #2e3440;
 }
-
+.title{background-color: #2e3440;}
 .menu {
   cursor: pointer;
   position: relative;
@@ -64,9 +65,7 @@ a {
 #search-component {
   background-color: #2e3440;
 }
-.add {
-  background-color: #2e3440;
-}
+ 
 .delete {
   background-color: #434c5e;
   border: 0px;
@@ -77,15 +76,31 @@ a {
   padding: 10px;
 }
 
-.addb,
 .boton {
   background-color: #434c5e;
 }
 input {
   background-color: #434c5e;
 }
-.col-12 {
+
+th {
+  border-bottom: 1px white solid;
+  background-color: #21242b;
+}
+td {
+  border-bottom: 1px white solid;
+}
+.containerForm {
   background-color: #2e3440;
 }
-.modNombre {  background-color: #2e3440;
+.form-control {
+  background-color: #434c5e;
 }
+.contenHeroDetail {
+  background-color: #2e3440;
+}
+ 
+button {
+  background-color: #434c5e;
+}
+ 
